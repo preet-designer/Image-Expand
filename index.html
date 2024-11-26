@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Expand</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body:before {
+      content: "";
+      background-image: url(images/great-wall.jpg);
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.25);
+      z-index: -1;
+    }
+
+    main {
+      /* border: solid white; */
+      width: 600px;
+      height: 500px;
+      display: flex;
+
+      gap: 15px;
+    }
+
+    .card {
+      /* border: solid white; */
+      width: 20%;
+      /* border-radius: 15px; */
+      cursor: pointer;
+      overflow: hidden;
+      transition: 0.7s ease;
+    }
+
+    .card:hover {
+      width: 80%;
+    }
+
+    .card .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .card:hover .image {
+      transform: scale(1.2);
+    }
+
+    .card .background {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      filter: brightness(0.25);
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .card:hover .background {
+      opacity: 1;
+    }
+
+    .card .layer {
+      /* border: solid white; */
+      width: 100%;
+      height: 50%;
+      position: relative;
+      /* bottom: 0; */
+      margin-top: -250px;
+      /* z-index: 1; */
+      background-image: linear-gradient(to top,
+          rgba(0, 0, 0, 0.9),
+          transparent);
+    }
+
+    .card .layer .info {
+      color: white;
+      /* border: solid white; */
+      width: 260px;
+      position: absolute;
+      bottom: 10px;
+      padding: 20px;
+      opacity: 0;
+    }
+
+    .card:hover .layer .info {
+      opacity: 1;
+    }
+
+    .info p {
+      color: rgba(255, 255, 255.75);
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <main>
+      <div class="card">
+        <img src="./taj-mahal.jpg" class="image" alt="" />
+        <img src="./taj-mahal.jpg" class="background" alt="" />
+        <div class="layer">
+          <div class="info">
+            <h1>Taj Mahal</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+              odio?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./marina-bay.jpg" class="image" alt="" />
+        <img src="./marina-bay.jpg" class="background" alt="" />
+        <div class="layer">
+          <div class="info">
+            <h1>Taj Mahal</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+              odio?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./great-wall.jpg" class="image" alt="" />
+        <img src="./great-wall.jpg" class="background" alt="" />
+        <div class="layer">
+          <div class="info">
+            <h1>Great-Wall</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+              odio?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./statue-liberty.jpg" class="image" alt="" />
+        <img src="./statue-liberty.jpg" class="background" alt="" />
+        <div class="layer">
+          <div class="info">
+            <h1>Statue-Liberty</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+              odio?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./fuji-mountain.jpg" class="image" alt="" />
+        <img src="./fuji-mountain.jpg" class="background" alt="" />
+        <div class="layer">
+          <div class="info">
+            <h1>Fuji Mountain</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
+              odio?
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
